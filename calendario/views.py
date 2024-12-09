@@ -6,6 +6,8 @@ from .models import CalendarBox
 def calendar_view(request):
     current_date = timezone.now().date()
     boxes = CalendarBox.objects.all().order_by('date')
+    print(f"Found {boxes.count()} boxes") # debug
+    print(current_date) # debug
     return render(request, 'calendario/calendar.html', {'boxes': boxes, 'current_date': current_date})
 
 def open_box(request, box_id):

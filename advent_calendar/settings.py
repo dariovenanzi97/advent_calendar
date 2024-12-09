@@ -4,7 +4,6 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
-ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,7 +28,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Aggiungi questa riga
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -54,8 +53,9 @@ ROOT_URLCONF = 'advent_calendar.urls'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-DEBUG = False
-ALLOWED_HOSTS = ['dariovenz.pythonanywhere.com']
+DEBUG = True
+ALLOWED_HOSTS = ['dariovenz.pythonanywhere.com', 'localhost', '127.0.0.1']
