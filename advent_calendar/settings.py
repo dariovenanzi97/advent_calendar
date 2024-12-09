@@ -53,8 +53,8 @@ DATABASES = {
 ROOT_URLCONF = 'advent_calendar.urls'
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/tuousername/advent_calendar/static'
-MEDIA_ROOT = '/home/tuousername/advent_calendar/media'
+STATIC_ROOT = '/home/dariovenz/advent_calendar/static'
+MEDIA_ROOT = '/home/dariovenz/advent_calendar/media'
 
 DEBUG = False
-ALLOWED_HOSTS = ['tuousername.pythonanywhere.com']
+ALLOWED_HOSTS = ['dariovenz.pythonanywhere.com']
