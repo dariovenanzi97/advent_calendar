@@ -4,7 +4,6 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
-DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -51,10 +50,12 @@ DATABASES = {
 }
 
 ROOT_URLCONF = 'advent_calendar.urls'
-STATIC_URL = 'static/'
+
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/dariovenz/advent_calendar/static'
-MEDIA_ROOT = '/home/dariovenz/advent_calendar/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEBUG = False
 ALLOWED_HOSTS = ['dariovenz.pythonanywhere.com']
